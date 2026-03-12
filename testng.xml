@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Calculator Suite"
+       parallel="classes"
+       thread-count="3">
+    <test name="Calculator Tests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <include name="regression"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="tests.SumTest"/>
+            <class name="tests.SubTest"/>
+            <class name="tests.MultiTest"/>
+            <class name="tests.DivTest"/>
+        </classes>
+    </test>
+</suite>
