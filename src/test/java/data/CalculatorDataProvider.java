@@ -4,39 +4,134 @@ import org.testng.annotations.DataProvider;
 
 public class CalculatorDataProvider {
 
-    @DataProvider(name="sumData")
-    public Object[][] sumData(){
+    @DataProvider(name="sumLongData", parallel=true)
+    public static Object[][] sumLongData() {
         return new Object[][]{
-                {2,3,5},
-                {10,5,15},
-                {7,8,15}
+                {5L,3L,8L},
+                {-5L,3L,-2L},
+                {0L,4L,4L}
         };
     }
 
-    @DataProvider(name="subtractionData")
-    public Object[][] subtractionData(){
+    @DataProvider(name="sumDoubleData", parallel=true)
+    public static Object[][] sumDoubleData() {
         return new Object[][]{
-                {10,5,5},
-                {20,10,10},
-                {15,5,10}
+                {5.5,3.5,9.0},
+                {-2.5,1.5,-1.0}
         };
     }
 
-    @DataProvider(name="multiplicationData")
-    public Object[][] multiplicationData(){
+    @DataProvider(name="subLongData", parallel=true)
+    public static Object[][] subLongData() {
         return new Object[][]{
-                {2,3,6},
-                {4,5,20},
-                {7,2,14}
+                {10L,3L,7L},
+                {-5L,3L,-8L}
         };
     }
 
-    @DataProvider(name="divisionData")
-    public Object[][] divisionData(){
+    @DataProvider(name="subDoubleData", parallel=true)
+    public static Object[][] subDoubleData() {
         return new Object[][]{
-                {10,2,5},
-                {9,3,3},
-                {20,4,5}
+                {5.5,2.5,3.0},
+                {-5.0,2.0,-7.0}
+        };
+    }
+
+    @DataProvider(name="multiLongData", parallel=true)
+    public static Object[][] multLongData() {
+        return new Object[][]{
+                {5L,3L,15L},
+                {-5L,3L,-15L}
+        };
+    }
+
+    @DataProvider(name="multiDoubleData", parallel=true)
+    public static Object[][] multDoubleData() {
+        return new Object[][]{
+                {2.5,2.0,Math.floor(5.0)},
+                {3.2,2.0,Math.floor(6.4)}
+        };
+    }
+
+    @DataProvider(name="divLongData", parallel=true)
+    public static Object[][] divLongData() {
+        return new Object[][]{
+                {10L,2L,5L},
+                {9L,3L,3L}
+        };
+    }
+
+    @DataProvider(name="divDoubleData", parallel=true)
+    public static Object[][] divDoubleData() {
+        return new Object[][]{
+                {10.0,2.0,5.0},
+                {9.0,3.0,3.0}
+        };
+    }
+
+    @DataProvider(name="powData", parallel=true)
+    public static Object[][] powData() {
+        return new Object[][]{
+                {2.0,3.0,Math.pow(2,3)},
+                {4.0,2.0,Math.pow(4,2)}
+        };
+    }
+
+    @DataProvider(name="sqrtData", parallel=true)
+    public static Object[][] sqrtData() {
+        return new Object[][]{
+                {4.0,2.0},
+                {-16.0,4.0}
+        };
+    }
+
+    @DataProvider(name="sinData", parallel=true)
+    public static Object[][] sinData() {
+        return new Object[][]{
+                {0.0,Math.sin(0)},
+                {Math.PI/2,Math.sin(Math.PI/2)}
+        };
+    }
+
+    @DataProvider(name="cosData", parallel=true)
+    public static Object[][] cosData() {
+        return new Object[][]{
+                {0.0,Math.sin(0)},
+                {Math.PI/2,Math.sin(Math.PI/2)}
+        };
+    }
+
+    @DataProvider(name="tgData", parallel=true)
+    public static Object[][] tgData() {
+        return new Object[][]{
+                {1.0},
+                {2.0}
+        };
+    }
+
+    @DataProvider(name="ctgData", parallel=true)
+    public static Object[][] ctgData() {
+        return new Object[][]{
+                {1.0,Math.tanh(1.0)},
+                {2.0,Math.tanh(2.0)}
+        };
+    }
+
+    @DataProvider(name="positiveData", parallel=true)
+    public static Object[][] positiveData() {
+        return new Object[][]{
+                {10L,true},
+                {-5L,false},
+                {0L,false}
+        };
+    }
+
+    @DataProvider(name="negativeData", parallel=true)
+    public static Object[][] negativeData() {
+        return new Object[][]{
+                {-10L,true},
+                {5L,false},
+                {0L,false}
         };
     }
 }
