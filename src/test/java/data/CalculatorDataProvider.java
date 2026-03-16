@@ -88,32 +88,32 @@ public class CalculatorDataProvider {
     @DataProvider(name="sinData", parallel=true)
     public static Object[][] sinData() {
         return new Object[][]{
-                {0.0,Math.sin(0)},
-                {Math.PI/2,Math.sin(Math.PI/2)}
+                {0.0, Math.sin(0)},
+                {Math.PI/2, Math.sin(Math.PI/2)}
         };
     }
 
     @DataProvider(name="cosData", parallel=true)
     public static Object[][] cosData() {
         return new Object[][]{
-                {0.0,Math.sin(0)},
-                {Math.PI/2,Math.sin(Math.PI/2)}
+                {0.0, Math.cos(0)},
+                {Math.PI/2, Math.cos(Math.PI/2)}
         };
     }
 
     @DataProvider(name="tgData", parallel=true)
     public static Object[][] tgData() {
         return new Object[][]{
-                {1.0},
-                {2.0}
+                {1.0, Math.tan(1.0)},
+                {2.0, Math.tan(2.0)}
         };
     }
 
     @DataProvider(name="ctgData", parallel=true)
     public static Object[][] ctgData() {
         return new Object[][]{
-                {1.0,Math.tanh(1.0)},
-                {2.0,Math.tanh(2.0)}
+                {1.0, 1 / Math.tan(1.0)},
+                {2.0, 1 / Math.tan(2.0)}
         };
     }
 
