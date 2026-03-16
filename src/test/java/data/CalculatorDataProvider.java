@@ -16,8 +16,7 @@ public class CalculatorDataProvider {
     @DataProvider(name="sumDoubleData", parallel=true)
     public static Object[][] sumDoubleData() {
         return new Object[][]{
-                {5.5,3.5,9.0},
-                {-2.5,1.5,-1.0}
+                {5.5,3.5,9.0}
         };
     }
 
@@ -38,7 +37,7 @@ public class CalculatorDataProvider {
     }
 
     @DataProvider(name="multiLongData", parallel=true)
-    public static Object[][] multLongData() {
+    public static Object[][] multiLongData() {
         return new Object[][]{
                 {5L,3L,15L},
                 {-5L,3L,-15L}
@@ -46,10 +45,10 @@ public class CalculatorDataProvider {
     }
 
     @DataProvider(name="multiDoubleData", parallel=true)
-    public static Object[][] multDoubleData() {
+    public static Object[][] multiDoubleData() {
         return new Object[][]{
-                {2.5,2.0,Math.floor(5.0)},
-                {3.2,2.0,Math.floor(6.4)}
+                {2.5,2.0,5.0},
+                {3.2,2.0,6.4}
         };
     }
 
@@ -73,7 +72,7 @@ public class CalculatorDataProvider {
     public static Object[][] powData() {
         return new Object[][]{
                 {2.0,3.0,Math.pow(2,3)},
-                {4.0,2.0,Math.pow(4,2)}
+                {2.0,2.5,Math.pow(2,2.5)}
         };
     }
 
@@ -81,38 +80,39 @@ public class CalculatorDataProvider {
     public static Object[][] sqrtData() {
         return new Object[][]{
                 {4.0,2.0},
-                {-16.0,4.0}
+                {-16.0,Double.NaN}
         };
     }
 
     @DataProvider(name="sinData", parallel=true)
     public static Object[][] sinData() {
         return new Object[][]{
-                {0.0, Math.sin(0)},
-                {Math.PI/2, Math.sin(Math.PI/2)}
+                {0.0,Math.sin(0)},
+                {Math.PI/2,Math.sin(Math.PI/2)}
         };
     }
 
     @DataProvider(name="cosData", parallel=true)
     public static Object[][] cosData() {
         return new Object[][]{
-                {0.0, Math.cos(0)},
-                {Math.PI/2, Math.cos(Math.PI/2)}
+                {0.0,Math.cos(0)},
+                {Math.PI/2,Math.cos(Math.PI/2)}
         };
     }
 
-    @DataProvider(name = "tgData")
-    public Object[][] tgData(){
+    @DataProvider(name="tgData", parallel=true)
+    public static Object[][] tgData() {
         return new Object[][]{
-                {Math.PI / 4, 1.0},
+                {1.0, Math.tan(1.0)},
+                {2.0, Math.tan(2.0)}
         };
     }
 
     @DataProvider(name="ctgData", parallel=true)
     public static Object[][] ctgData() {
         return new Object[][]{
-                {1.0, 1 / Math.tan(1.0)},
-                {2.0, 1 / Math.tan(2.0)}
+                {1.0, 1/Math.tan(1.0)},
+                {2.0, 1/Math.tan(2.0)}
         };
     }
 

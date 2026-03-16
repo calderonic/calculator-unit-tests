@@ -7,9 +7,9 @@ import tests.BaseTest;
 
 public class MultiDoubleTest extends BaseTest {
 
-    @Test(dataProvider = "multiLongData", dataProviderClass = CalculatorDataProvider.class, groups = {"regression"})
-    public void verifyMultiLong(long a, long b, long expected) {
-        long result = calculator.mult(a, b);
-        Assert.assertEquals(result, expected, "Multiplication long result incorrect");
+    @Test(dataProvider = "multiDoubleData", dataProviderClass = CalculatorDataProvider.class, groups = {"regression"})
+    public void verifyMultiD(double a, double b, double expected) {
+        double result = calculator.mult(a, b);
+        Assert.assertEquals(result, expected, 0.0001, "Multiplication double result incorrect");
     }
 }
