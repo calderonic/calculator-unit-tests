@@ -8,7 +8,7 @@ import tests.BaseTest;
 public class MultiDoubleTest extends BaseTest {
 
     @Test(dataProvider = "multiDoubleData", dataProviderClass = CalculatorDataProvider.class, groups = {"regression"})
-    public void verifyMultiD(double a, double b, double expected) {
+    public void verifyMultiDouble(double a, double b, double expected) {
         double result = calculator.mult(a, b);
         Assert.assertEquals(result, expected, 0.0001, "Multiplication double result incorrect");
     }
