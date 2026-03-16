@@ -8,8 +8,8 @@ import tests.BaseTest;
 public class TgTest extends BaseTest {
 
     @Test(dataProvider = "tgData", dataProviderClass = CalculatorDataProvider.class)
-    public void verifyTg(double input){
+    public void verifyTg(double input, double expected){
         double result = calculator.tg(input);
-        Assert.assertNotNull(result);
+        Assert.assertEquals(result, expected, 0.0001);
     }
 }

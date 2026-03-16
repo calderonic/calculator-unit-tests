@@ -101,11 +101,10 @@ public class CalculatorDataProvider {
         };
     }
 
-    @DataProvider(name="tgData", parallel=true)
-    public static Object[][] tgData() {
+    @DataProvider(name = "tgData")
+    public Object[][] tgData(){
         return new Object[][]{
-                {1.0},
-                {2.0}
+                {Math.PI / 4, 1.0},
         };
     }
 
